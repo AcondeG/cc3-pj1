@@ -1,0 +1,15 @@
+00001000: add	x8, x0, x0
+00001004: Invalid Instruction: 0x00a40413
+00001008: Invalid Instruction: 0x01440293
+0000100c: sll	x5, x5, x8
+00001010: Invalid Instruction: 0x7f02f293
+00001014: Invalid Instruction: 0xfffff437
+00001018: Invalid Instruction: 0x7ff46413
+0000101c: Invalid Instruction: 0x00042493
+00001020: Invalid Instruction: 0x00100513
+00001024: Invalid Instruction: 0x00040593
+00001028: Invalid Instruction: 0x00000073
+0000102c: Invalid Instruction: 0x00102493
+00001030: Invalid Instruction: 0x00a41413
+00001034: Invalid Instruction: 0x00a00513
+00001038: Invalid Instruction: 0x00000073

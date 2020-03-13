@@ -25,7 +25,7 @@ void write_ecall(Instruction);
 void decode_instruction(Instruction instruction) {
   /* YOUR CODE HERE: COMPLETE THE SWITCH STATEMENTS */
   //Switch por el opcode
-  switch(instruction { 
+  switch(instruction.opcode) { 
     /* YOUR CODE HERE */
     case 0x33:
       write_rtype(instruction);
@@ -43,7 +43,51 @@ void write_rtype(Instruction instruction) {
     case 0x00:
       switch (instruction.rtype.funct3) {
       case 0x00:
-        printf("add");  
+        print_rtype("add", instruction);  
+      break;
+      case 0x01:
+        print_rtype("sll", instruction);
+      break;
+      case 0x2:
+        print_rtype("slt", instruction);
+      break;
+      case 0x4:
+        print_rtype("xor", instruction);
+      break;
+      case 0x5:
+        print_rtype("slr", instruction);
+      break;
+      case 0x6:
+        print_rtype("or", instruction);
+      break;
+      case 0x7:
+        print_rtype("and", instruction);
+      break;
+      }
+    break;
+    case 0x01:
+      switch (instruction.rtype.funct3) {
+      case 0x00:
+        print_rtype("mul", instruction);  
+      break;
+      case 0x1:
+        print_rtype("mulh", instruction);  
+      break;
+      case 0x4:
+        print_rtype("div", instruction);  
+      break;
+      case 0x6:
+        print_rtype("rem", instruction);  
+      break;
+      }
+    break;
+    case 0x20:
+      switch (instruction.rtype.funct3) {
+      case 0x00:
+        print_rtype("sub", instruction);  
+      break;
+      case 0x5:
+        print_rtype("sra", instruction);  
       break;
       }
     break;
@@ -123,6 +167,7 @@ void write_ecall(Instruction instruction) {
 
 void print_rtype(char *name, Instruction instruction) {
   /* YOUR CODE HERE */
+  printf(RTYPE_FORMAT, name, instruction.rtype.rd, instruction.rtype.rs1, instruction.rtype.rs2);
 }
 
 
